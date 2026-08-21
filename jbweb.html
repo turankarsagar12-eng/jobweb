@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobFinder - Find Your Dream Job</title>
+
+    <link rel="stylesheet" href="style3.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                Job<span>Finder</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#companies">Companies</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="login-btn" onclick="loginUser()">
+                    Login
+                </button>
+
+                <button class="register-btn" onclick="registerUser()">
+                    Register
+                </button>
+            </div>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    #1 JOB SEARCH PLATFORM
+                </span>
+
+                <h1>
+                    Find Your
+                    <span>Dream Job</span>
+                    Today
+                </h1>
+
+                <p>
+                    Search thousands of job opportunities from
+                    leading companies and take the next step
+                    in your career.
+                </p>
+
+
+                <!-- JOB SEARCH -->
+
+                <div class="job-search">
+
+                    <div class="search-field">
+                        <span>🔍</span>
+
+                        <input
+                            type="text"
+                            id="jobInput"
+                            placeholder="Job title, keyword..."
+                        >
+                    </div>
+
+                    <div class="search-field">
+                        <span>📍</span>
+
+                        <input
+                            type="text"
+                            id="locationInput"
+                            placeholder="Location..."
+                        >
+                    </div>
+
+                    <button
+                        class="search-button"
+                        onclick="searchJobs()">
+
+                        Search Jobs
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= JOBS ================= -->
+
+        <section class="jobs-section" id="jobs">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>OPPORTUNITIES</span>
+
+                    <h2>
+                        Featured Jobs
+                    </h2>
+                </div>
+
+                <p>
+                    Find your next career opportunity
+                </p>
+
+            </div>
+
+
+            <!-- JOB FILTER -->
+
+            <div class="job-filters">
+
+                <button
+                    class="filter active"
+                    data-filter="all">
+
+                    All Jobs
+
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="Full-time">
+
+                    Full-time
+
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="Part-time">
+
+                    Part-time
+
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="Internship">
+
+                    Internship
+
+                </button>
+
+            </div>
+
+
+            <!-- JOB LIST -->
+
+            <div class="jobs-list" id="jobsList">
+
+
+                <!-- JOB 1 -->
+
+                <article
+                    class="job-item"
+                    data-title="Frontend Developer"
+                    data-location="Pune"
+                    data-type="Full-time">
+
+                    <div class="company-icon blue">
+                        T
+                    </div>
+
+                    <div class="job-details">
+
+                        <span class="job-type">
+                            Full-time
+                        </span>
+
+                        <h3>
+                            Frontend Developer
+                        </h3>
+
+                        <h4>
+                            TechVision Solutions
+                        </h4>
+
+                        <div class="job-meta">
+
+                            <span>📍 Pune</span>
+
+                            <span>💰 ₹4 - ₹7 LPA</span>
+
+                            <span>🕐 2 days ago</span>
+
+                        </div>
+
+                        <div class="skills">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="apply-button"
+                        onclick="applyJob('Frontend Developer')">
+
+                        Apply Now
+
+                    </button>
+
+                </article>
+
+
+                <!-- JOB 2 -->
+
+                <article
+                    class="job-item"
+                    data-title="AWS Cloud Engineer"
+                    data-location="Bangalore"
+                    data-type="Full-time">
+
+                    <div class="company-icon purple">
+                        C
+                    </div>
+
+                    <div class="job-details">
+
+                        <span class="job-type">
+                            Full-time
+                        </span>
+
+                        <h3>
+                            AWS Cloud Engineer
+                        </h3>
+
+                        <h4>
+                            CloudWorks Technologies
+                        </h4>
+
+                        <div class="job-meta">
+
+                            <span>📍 Bangalore</span>
+
+                            <span>💰 ₹6 - ₹10 LPA</span>
+
+                            <span>🕐 1 day ago</span>
+
+                        </div>
+
+                        <div class="skills">
+
+                            <span>AWS</span>
+                            <span>Docker</span>
+                            <span>Linux</span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="apply-button"
+                        onclick="applyJob('AWS Cloud Engineer')">
+
+                        Apply Now
+
+                    </button>
+
+                </article>
+
+
+                <!-- JOB 3 -->
+
+                <article
+                    class="job-item"
+                    data-title="UI UX Designer"
+                    data-location="Mumbai"
+                    data-type="Part-time">
+
+                    <div class="company-icon orange">
+                        D
+                    </div>
+
+                    <div class="job-details">
+
+                        <span class="job-type">
+                            Part-time
+                        </span>
+
+                        <h3>
+                            UI/UX Designer
+                        </h3>
+
+                        <h4>
+                            DesignCraft Studio
+                        </h4>
+
+                        <div class="job-meta">
+
+                            <span>📍 Mumbai</span>
+
+                            <span>💰 ₹3 - ₹6 LPA</span>
+
+                            <span>🕐 3 days ago</span>
+
+                        </div>
+
+                        <div class="skills">
+
+                            <span>Figma</span>
+                            <span>UI Design</span>
+                            <span>UX</span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="apply-button"
+                        onclick="applyJob('UI UX Designer')">
+
+                        Apply Now
+
+                    </button>
+
+                </article>
+
+
+                <!-- JOB 4 -->
+
+                <article
+                    class="job-item"
+                    data-title="DevOps Intern"
+                    data-location="Hyderabad"
+                    data-type="Internship">
+
+                    <div class="company-icon green">
+                        D
+                    </div>
+
+                    <div class="job-details">
+
+                        <span class="job-type">
+                            Internship
+                        </span>
+
+                        <h3>
+                            DevOps Intern
+                        </h3>
+
+                        <h4>
+                            DevTech Systems
+                        </h4>
+
+                        <div class="job-meta">
+
+                            <span>📍 Hyderabad</span>
+
+                            <span>💰 ₹20K - ₹30K / Month</span>
+
+                            <span>🕐 4 days ago</span>
+
+                        </div>
+
+                        <div class="skills">
+
+                            <span>AWS</span>
+                            <span>Docker</span>
+                            <span>Jenkins</span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="apply-button"
+                        onclick="applyJob('DevOps Intern')">
+
+                        Apply Now
+
+                    </button>
+
+                </article>
+
+
+                <!-- JOB 5 -->
+
+                <article
+                    class="job-item"
+                    data-title="Python Developer"
+                    data-location="Pune"
+                    data-type="Full-time">
+
+                    <div class="company-icon blue">
+                        P
+                    </div>
+
+                    <div class="job-details">
+
+                        <span class="job-type">
+                            Full-time
+                        </span>
+
+                        <h3>
+                            Python Developer
+                        </h3>
+
+                        <h4>
+                            PixelSoft Technologies
+                        </h4>
+
+                        <div class="job-meta">
+
+                            <span>📍 Pune</span>
+
+                            <span>💰 ₹5 - ₹8 LPA</span>
+
+                            <span>🕐 5 days ago</span>
+
+                        </div>
+
+                        <div class="skills">
+
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>SQL</span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="apply-button"
+                        onclick="applyJob('Python Developer')">
+
+                        Apply Now
+
+                    </button>
+
+                </article>
+
+
+                <!-- JOB 6 -->
+
+                <article
+                    class="job-item"
+                    data-title="Java Developer"
+                    data-location="Bangalore"
+                    data-type="Internship">
+
+                    <div class="company-icon red">
+                        J
+                    </div>
+
+                    <div class="job-details">
+
+                        <span class="job-type">
+                            Internship
+                        </span>
+
+                        <h3>
+                            Java Developer
+                        </h3>
+
+                        <h4>
+                            CodeSphere Pvt. Ltd.
+                        </h4>
+
+                        <div class="job-meta">
+
+                            <span>📍 Bangalore</span>
+
+                            <span>💰 ₹18K - ₹25K / Month</span>
+
+                            <span>🕐 6 days ago</span>
+
+                        </div>
+
+                        <div class="skills">
+
+                            <span>Java</span>
+                            <span>Spring</span>
+                            <span>SQL</span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="apply-button"
+                        onclick="applyJob('Java Developer')">
+
+                        Apply Now
+
+                    </button>
+
+                </article>
+
+            </div>
+
+            <p id="noJobs">
+                No jobs found.
+            </p>
+
+        </section>
+
+
+        <!-- ================= COMPANIES ================= -->
+
+        <section class="companies-section" id="companies">
+
+            <div class="section-heading center">
+
+                <span>TOP EMPLOYERS</span>
+
+                <h2>
+                    Companies Hiring Now
+                </h2>
+
+                <p>
+                    Discover opportunities from growing companies
+                </p>
+
+            </div>
+
+            <div class="company-grid">
+
+                <div class="company-card">
+                    <div class="company-symbol">
+                        T
+                    </div>
+
+                    <h3>TechVision</h3>
+
+                    <p>Technology</p>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-symbol">
+                        C
+                    </div>
+
+                    <h3>CloudWorks</h3>
+
+                    <p>Cloud Computing</p>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-symbol">
+                        D
+                    </div>
+
+                    <h3>DesignCraft</h3>
+
+                    <p>Design & Creative</p>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-symbol">
+                        P
+                    </div>
+
+                    <h3>PixelSoft</h3>
+
+                    <p>Software</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about-section" id="about">
+
+            <div class="about-content">
+
+                <span>ABOUT JOBFINDER</span>
+
+                <h2>
+                    Helping You Build Your Career
+                </h2>
+
+                <p>
+                    JobFinder is a frontend job portal project
+                    created using HTML, CSS and JavaScript.
+                    Candidates can explore job opportunities,
+                    search jobs by title and location, and
+                    filter jobs based on employment type.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <div class="footer-content">
+
+                <div>
+                    <a href="#home" class="logo">
+                        Job<span>Finder</span>
+                    </a>
+
+                    <p>
+                        Find your dream job and build your future.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="#home">Home</a>
+                    <a href="#jobs">Jobs</a>
+                    <a href="#companies">Companies</a>
+                    <a href="#about">About</a>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                © 2026 JobFinder. All Rights Reserved.
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
